@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="app.SDL.tripcount">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Wallet"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="label">
+        <activity android:name="app.SDL.tripcount.activities.SplashScreen"></activity>
+        <activity android:name="app.SDL.tripcount.activities.AddExpenseActivity" />
+        <activity android:name="app.SDL.tripcount.activities.ExpenseActivity" />
+
+        <activity
+            android:name="app.SDL.tripcount.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="app.SDL.tripcount.home" />
+        <activity android:name="app.SDL.tripcount.RegisterActivity" />
+        <activity
+            android:name="app.SDL.tripcount.AddPlace"
+            android:parentActivityName="app.SDL.tripcount.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.msdeep14.tripcount.AddPlace" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="app.SDL.tripcount.AddPlaceDetails"
+            android:parentActivityName="app.SDL.tripcount.AddPlace"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.msdeep14.tripcount.AddPlaceDetails" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="app.SDL.tripcount.Display_friend"
+            android:parentActivityName="app.SDL.tripcount.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.msdeep14.tripcount.Display_friend" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="app.SDL.tripcount.Display_friendDetails"
+            android:parentActivityName="app.SDL.tripcount.Display_friend"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.msdeep14.tripcount.Display_friendDetails" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="app.SDL.tripcount.Update"
+            android:parentActivityName="app.SDL.tripcount.ViewTripDetails"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.msdeep14.tripcount.Update" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="app.SDL.tripcount.ViewTripDetails"
+            android:parentActivityName="app.SDL.tripcount.AddPlace"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="app.msdeep14.tripcount.ViewTripDetails" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
